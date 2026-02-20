@@ -55,7 +55,7 @@ patch_fstab fstab.raphael /data ext4 options "data=ordered" "nomblk_io_submit,da
 append_file fstab.raphael "usbdisk" fstab;
 
 # disable cgroupv1
-patch_cmdline cgroup_no_v1 "cpu,cpuset,io";
+patch_cmdline cgroup_no_v1 "all";
 
 write_boot; # use flash_boot to skip ramdisk repack, e.g. for devices with init_boot ramdisk
 ## end boot install
